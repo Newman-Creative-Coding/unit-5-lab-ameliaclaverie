@@ -27,8 +27,16 @@
      */
 public class Car {
     // Variables:
-
-    // Constructor:
+        private int speedster;
+        private int roadster;
+        private int cubester;
+        private String make;
+        private String model;
+        private String licensePlate;
+        private static int totalCars;
+        private int totalModelCars;
+        private double totalProfit;
+        // Constructor:
     
 
     // Methods:
