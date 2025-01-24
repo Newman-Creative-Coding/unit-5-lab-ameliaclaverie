@@ -27,17 +27,23 @@
      */
 public class Car {
     // Variables:
-        private int speedster;
-        private int roadster;
-        private int cubester;
+        private static int speedster;
+        private static int roadster;
+        private static int cubester;
         private String make;
         private String model;
         private String licensePlate;
         private static int totalCars;
-        private int totalModelCars;
-        private double totalProfit;
+        private static int totalModelCars;
+        private static double totalProfit;
+        private static String VINLetter;
+        private static int VINNumber=9999;
         // Constructor:
-    
+        public Car(String mak, String mode, String lPlate){
+            make=mak;
+            model=mode;
+            licensePlate=lPlate;
+        }
 
     // Methods:
     /**
@@ -47,19 +53,28 @@ public class Car {
      * @return VIN -the VIN of the Car object
      */
     public String getVIN(){
-
+        VINNumber++;
+        if(VINNumber>99999){
+            VINLetter=B;
+        }
+        else{
+            VINLetter=A;
+        }
+        return VINLetter + VinNumber;
     }
     /**
-     * [your Javadocs here]
+     * returns the final model
+     * @return model - final model
      */
     public String getModel(){
-
+        return model;
     }
     /**
-     * [your Javadocs here]
+     * returns the final make
+     * @return make - final make
      */
     public String getMake(){
-
+        return make;
     }
     /**
      * Sets the String license plate number of a given Car object.
@@ -68,21 +83,21 @@ public class Car {
      * @param plateNumber -the customer's String license plate number
      */
     public void setPlateNumber(String plateNumber){
-
+        licenseplate=plateNumber;
     }
     /**
      * Returns the total profits from cars produced by my factory.
      * @return totalProfits -the total sale price of all Car objects created
      */
     public double getTotalProfits(){
-
+        return totalProfit;
     }
     /**
      * Returns the total number of cars produced by my factory.
      * @return totalCars -the total number of Car objects created
      */
     public int getTotalCars(){
-
+        return totalCars;
     }
     /**
      * Returns the  number of Speedster cars produced by my factory.
@@ -90,7 +105,7 @@ public class Car {
      * with model "Speedster" created
      */
     public int getTotalSpeedsters(){
-
+        return speedster;
     }
     /**
      * Returns the  number of Roadster cars produced by my factory.
@@ -98,7 +113,7 @@ public class Car {
      * with model "Roadster" created
      */
     public int getTotalRoadsters(){
-
+        return roadster;
     }
     /**
      * Returns the  number of Cubester cars produced by my factory.
@@ -106,7 +121,7 @@ public class Car {
      * with model "Cubester" created
      */
     public int getTotalCubesters(){
-
+        return cubester;
     }
 
 }
